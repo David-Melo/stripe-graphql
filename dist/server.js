@@ -16,7 +16,7 @@ const createStripeGraphQLServer = (params) => {
         const adminSecretFromHeader = request.headers.get('x-hasura-admin-secret');
         const adminSecret = process.env.NHOST_ADMIN_SECRET;
         const nhostWebhookSecretFromHeader = request.headers.get('x-hasura-webhook-secret');
-        const nhostWebhookSecret = process.env.NHOST_WEBHOOK_SECRET;
+        const nhostWebhookSecret = process.env.SERVICE_API_SECRET_KEY;
         const role = request.headers.get('x-hasura-role');
         const isAdmin = adminSecretFromHeader === adminSecret ||
             (role === 'admin' && nhostWebhookSecretFromHeader === nhostWebhookSecret);
