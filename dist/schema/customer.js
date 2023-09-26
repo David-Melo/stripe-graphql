@@ -120,8 +120,7 @@ builder_1.builder.objectType('StripeCustomer', {
             args: {
                 type: t.arg({
                     type: payment_methods_1.StripePaymentMethodTypes,
-                    required: true,
-                    defaultValue: 'card'
+                    required: false
                 }),
                 startingAfter: t.arg.string({
                     required: false
@@ -136,7 +135,7 @@ builder_1.builder.objectType('StripeCustomer', {
             nullable: false,
             resolve: (customer, { type, startingAfter, endingBefore, limit }) => __awaiter(void 0, void 0, void 0, function* () {
                 const paymentMethods = yield utils_1.stripe.customers.listPaymentMethods(customer.id, {
-                    type,
+                    type: type || undefined,
                     starting_after: startingAfter || undefined,
                     ending_before: endingBefore || undefined,
                     limit: limit || undefined
