@@ -130,8 +130,7 @@ builder.objectType('StripeCustomer', {
       args: {
         type: t.arg({
           type: StripePaymentMethodTypes,
-          required: true,
-          defaultValue: 'card'
+          required: false
         }),
         startingAfter: t.arg.string({
           required: false
@@ -146,7 +145,7 @@ builder.objectType('StripeCustomer', {
       nullable: false,
       resolve: async (customer, { type, startingAfter, endingBefore, limit }) => {
         const paymentMethods = await stripe.customers.listPaymentMethods(customer.id, {
-          type,
+          type: type || undefined,
           starting_after: startingAfter || undefined,
           ending_before: endingBefore || undefined,
           limit: limit || undefined
