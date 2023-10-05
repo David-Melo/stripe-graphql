@@ -30,6 +30,7 @@ exports.StripePaymentMethodTypes = builder_1.builder.enumType('StripePaymentMeth
         'boleto',
         'card',
         'card_present',
+        'cashapp',
         'customer_balance',
         'eps',
         'fpx',
@@ -42,11 +43,12 @@ exports.StripePaymentMethodTypes = builder_1.builder.enumType('StripePaymentMeth
         'oxxo',
         'p24',
         'paynow',
+        'pix',
         'promptpay',
         'sepa_debit',
         'sofort',
         'us_bank_account',
-        'wechat_pay'
+        'wechat_pay',
     ]
 });
 //# sourceMappingURL=payment-methods.js.map

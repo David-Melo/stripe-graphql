@@ -49,6 +49,7 @@ export const StripePaymentMethodTypes = builder.enumType('StripePaymentMethodTyp
     'boleto',
     'card',
     'card_present',
+    'cashapp',
     'customer_balance',
     'eps',
     'fpx',
@@ -61,10 +62,11 @@ export const StripePaymentMethodTypes = builder.enumType('StripePaymentMethodTyp
     'oxxo',
     'p24',
     'paynow',
+    'pix',
     'promptpay',
     'sepa_debit',
     'sofort',
     'us_bank_account',
-    'wechat_pay'
+    'wechat_pay',
   ] as const
 })
